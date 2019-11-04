@@ -1,0 +1,8 @@
+{
+  "block.redstonemecha.mecha_table" : "Mecha Table",
+
+  "item.redstonemecha.basis" : "Basis",
+  "item.redstonemecha.redstone_basis" : "Redstone Basis",
+
+  "container.redstonemecha.mecha_table" : "Mechanic Table"
+}

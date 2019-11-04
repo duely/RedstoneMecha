@@ -1,0 +1,100 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"0": "redstonemecha:block/mecha_table",
+		"particle": "redstonemecha:block/mecha_table"
+	},
+	"elements": [
+		{
+			"name": "core",
+			"from": [0, 5, 0],
+			"to": [16, 12, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 7], "texture": "#0"},
+				"east": {"uv": [0, 0, 16, 7], "texture": "#0"},
+				"south": {"uv": [0, 0, 16, 7], "texture": "#0"},
+				"west": {"uv": [0, 0, 16, 7], "texture": "#0"},
+				"up": {"uv": [0, 0, 16, 7], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 7], "texture": "#0"}
+			}
+		},
+		{
+			"name": "leg1",
+			"from": [0, 0, 0],
+			"to": [3, 5, 3],
+			"faces": {
+				"north": {"uv": [0, 7, 3, 12], "texture": "#0"},
+				"east": {"uv": [0, 7, 3, 12], "texture": "#0"},
+				"south": {"uv": [0, 7, 3, 12], "texture": "#0"},
+				"west": {"uv": [0, 7, 3, 12], "texture": "#0"},
+				"up": {"uv": [0, 10, 3, 13], "texture": "#0"},
+				"down": {"uv": [0, 10, 3, 13], "texture": "#0"}
+			}
+		},
+		{
+			"name": "leg2",
+			"from": [13, 0, 0],
+			"to": [16, 5, 3],
+			"faces": {
+				"north": {"uv": [0, 7, 3, 12], "texture": "#0"},
+				"east": {"uv": [0, 7, 3, 12], "texture": "#0"},
+				"south": {"uv": [0, 7, 3, 12], "texture": "#0"},
+				"west": {"uv": [0, 7, 3, 12], "texture": "#0"},
+				"up": {"uv": [0, 10, 3, 13], "texture": "#0"},
+				"down": {"uv": [0, 10, 3, 13], "texture": "#0"}
+			}
+		},
+		{
+			"name": "leg3",
+			"from": [13, 0, 13],
+			"to": [16, 5, 16],
+			"faces": {
+				"north": {"uv": [0, 7, 3, 12], "texture": "#0"},
+				"east": {"uv": [0, 7, 3, 12], "texture": "#0"},
+				"south": {"uv": [0, 7, 3, 12], "texture": "#0"},
+				"west": {"uv": [0, 7, 3, 12], "texture": "#0"},
+				"up": {"uv": [0, 10, 3, 13], "texture": "#0"},
+				"down": {"uv": [0, 10, 3, 13], "texture": "#0"}
+			}
+		},
+		{
+			"name": "leg4",
+			"from": [0, 0, 13],
+			"to": [3, 5, 16],
+			"faces": {
+				"north": {"uv": [0, 7, 3, 12], "texture": "#0"},
+				"east": {"uv": [0, 7, 3, 12], "texture": "#0"},
+				"south": {"uv": [0, 7, 3, 12], "texture": "#0"},
+				"west": {"uv": [0, 7, 3, 12], "texture": "#0"},
+				"up": {"uv": [0, 10, 3, 13], "texture": "#0"},
+				"down": {"uv": [0, 10, 3, 13], "texture": "#0"}
+			}
+		},
+		{
+			"name": "hanmmer",
+			"from": [2, 12, 12],
+			"to": [7, 14, 15],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 7], "texture": "#0"},
+				"east": {"uv": [0, 0, 16, 7], "texture": "#0"},
+				"south": {"uv": [0, 0, 16, 7], "texture": "#0"},
+				"west": {"uv": [0, 0, 16, 7], "texture": "#0"},
+				"up": {"uv": [0, 0, 16, 7], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 7], "texture": "#0"}
+			}
+		},
+		{
+			"name": "handle",
+			"from": [4, 12, 8],
+			"to": [5, 13, 12],
+			"faces": {
+				"north": {"uv": [0, 9, 1, 10], "texture": "#0"},
+				"east": {"uv": [0, 7, 3, 8], "texture": "#0"},
+				"south": {"uv": [0, 9, 1, 10], "texture": "#0"},
+				"west": {"uv": [0, 7, 3, 8], "texture": "#0"},
+				"up": {"uv": [0, 7, 3, 8], "texture": "#0"},
+				"down": {"uv": [0, 7, 3, 8], "texture": "#0"}
+			}
+		}
+	]
+}

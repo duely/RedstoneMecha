@@ -1,0 +1,10 @@
+{
+  "type": "redstonemecha:mechacrafting",
+  "ingredients": [
+    {
+      "item": "minecraft:stone"
+    }
+  ],
+  "result": "redstonemecha:basis",
+  "count": 8
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "@S",
+    "@@",
+    "##"
+  ],
+  "key": {
+    "S": {
+      "tag": "forge:rods/wooden"
+    },
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "@": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "redstonemecha:mecha_table"
+  }
+}
