@@ -21,8 +21,8 @@ public class RedWorkerModel<T extends RedWorkerEntity> extends EntityModel<T> {
         body = new RendererModel(this);
         body.setRotationPoint(0.0F, 18.0F, 0.5F);
         body.cubeList.add(new ModelBox(body, 0, 0, -5.0F, -9.0F, -7.0F, 10, 7, 2, 0.0F, false));
-        body.cubeList.add(new ModelBox(body, 1, 1, -4.0F, -9.0F, -8.0F, 8, 6, 1, 0.0F, false));
-        body.cubeList.add(new ModelBox(body, 0, 0, -5.0F, -9.0F, 4.0F, 10, 7, 2, 0.0F, false));
+        body.cubeList.add(new ModelBox(body, 24, 9, -4.0F, -9.0F, -8.0F, 8, 6, 1, 0.0F, false));
+        body.cubeList.add(new ModelBox(body, 36, 0, -5.0F, -9.0F, 4.0F, 10, 7, 2, 0.0F, false));
         body.cubeList.add(new ModelBox(body, 0, 9, 5.0F, -9.0F, -6.0F, 2, 7, 10, 0.0F, false));
         body.cubeList.add(new ModelBox(body, 0, 9, -7.0F, -9.0F, -6.0F, 2, 7, 10, 0.0F, false));
         body.cubeList.add(new ModelBox(body, 0, 0, -2.0F, -8.0F, -5.0F, 4, 1, 2, 0.0F, false));
