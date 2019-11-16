@@ -3,6 +3,8 @@
 
   "item.redstonemecha.basis" : "Basis",
   "item.redstonemecha.redstone_basis" : "Redstone Basis",
+  "item.redstonemecha.redstone_core": "Redstone Core",
+  "item.redstonemecha.redworker": "RedWorker",
 
   "container.redstonemecha.mecha_table" : "Mechanic Table"
 }

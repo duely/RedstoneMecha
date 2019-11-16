@@ -22,7 +22,7 @@ public class MechaPacketHandler {
                 .add();
     }
 
-    public static void jumpStart(MechaBaseEntity entity) {
+    public static void pushSpaceStart(MechaBaseEntity entity) {
         MechaPacketHandler.CHANNEL.sendToServer(new MessageMechaSpaceKeyStat(entity));
     }
 }

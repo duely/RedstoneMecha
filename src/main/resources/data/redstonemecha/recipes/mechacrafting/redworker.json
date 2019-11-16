@@ -1,0 +1,13 @@
+{
+  "type": "redstonemecha:mechacrafting",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_block"
+    },
+    {
+      "item": "redstonemecha:redstone_core"
+    }
+  ],
+  "result": "redstonemecha:redworker",
+  "count": 1
+}

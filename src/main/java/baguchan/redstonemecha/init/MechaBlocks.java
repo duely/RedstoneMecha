@@ -8,7 +8,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class MechaBlocks {
 
@@ -21,7 +20,7 @@ public class MechaBlocks {
 
     public static void registerItemBlocks(RegistryEvent.Register<Item> registry) {
 
-        MechaItems.register(registry, new BlockItem(MECHATABLE, (new Item.Properties()).group(ItemGroup.REDSTONE)));
+        MechaItems.register(registry, new BlockItem(MECHATABLE, (new Item.Properties()).group(ItemGroup.MISC)));
     }
 
 }

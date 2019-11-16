@@ -1,13 +1,9 @@
 package baguchan.redstonemecha.entity;
 
-import baguchan.redstonemecha.init.GearTypeRegister;
 import baguchan.redstonemecha.network.MechaPacketHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -109,7 +105,7 @@ public class RedWorkerEntity extends MechaBaseEntity {
 
         if (this.isRidingPlayer(mc.player)) {
             if (mc.gameSettings.keyBindJump.isKeyDown()) {
-                MechaPacketHandler.jumpStart(this);
+                MechaPacketHandler.pushSpaceStart(this);
             }
         }
     }
