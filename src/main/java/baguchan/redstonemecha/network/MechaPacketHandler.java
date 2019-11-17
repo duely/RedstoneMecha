@@ -20,9 +20,17 @@ public class MechaPacketHandler {
                 .encoder(MessageMechaSpaceKeyStat::writePacketData).decoder(MessageMechaSpaceKeyStat::readPacketData)
                 .consumer(MessageMechaSpaceKeyStat.Handler::handle)
                 .add();
+        CHANNEL.messageBuilder(MessageMechaActionKeyStat.class, 1)
+                .encoder(MessageMechaActionKeyStat::writePacketData).decoder(MessageMechaActionKeyStat::readPacketData)
+                .consumer(MessageMechaActionKeyStat.Handler::handle)
+                .add();
     }
 
     public static void pushSpaceStart(MechaBaseEntity entity) {
         MechaPacketHandler.CHANNEL.sendToServer(new MessageMechaSpaceKeyStat(entity));
+    }
+
+    public static void pushActionStart(MechaBaseEntity entity, int inventoryId) {
+        MechaPacketHandler.CHANNEL.sendToServer(new MessageMechaActionKeyStat(entity, inventoryId));
     }
 }

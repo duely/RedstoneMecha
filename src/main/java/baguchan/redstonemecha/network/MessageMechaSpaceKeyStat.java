@@ -1,7 +1,6 @@
 package baguchan.redstonemecha.network;
 
 import baguchan.redstonemecha.entity.MechaBaseEntity;
-import baguchan.redstonemecha.init.GearTypeRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent;
@@ -43,12 +42,7 @@ public class MessageMechaSpaceKeyStat {
                 if (entity instanceof MechaBaseEntity) {
                     MechaBaseEntity mechaBaseEntity = (MechaBaseEntity) entity;
 
-                    if (!mechaBaseEntity.getInventory().getStackInSlot(1).isEmpty()) {
-                        if (GearTypeRegister.getGear(mechaBaseEntity.getInventory().getStackInSlot(1)) != null) {
-                            GearTypeRegister.getGear(mechaBaseEntity.getInventory().getStackInSlot(1))
-                                    .onPushSpaceKey(mechaBaseEntity);
-                        }
-                    }
+                    mechaBaseEntity.getJumpController().setJumping();
                 }
             });
             context.setPacketHandled(true);

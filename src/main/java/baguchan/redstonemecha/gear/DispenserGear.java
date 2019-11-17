@@ -1,6 +1,7 @@
 package baguchan.redstonemecha.gear;
 
 import baguchan.redstonemecha.entity.MechaBaseEntity;
+import baguchan.redstonemecha.utils.InventoryUtils;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.Vector3f;
@@ -22,15 +23,15 @@ public class DispenserGear extends MechaGearType {
     }
 
     @Override
-    public void onPushSpaceKey(MechaBaseEntity mechaEntity) {
+    public void onPushActionKey(MechaBaseEntity mechaEntity) {
         if (mechaEntity.getCooldown() <= 3) {
             if (mechaEntity.getControllingPassenger() instanceof PlayerEntity) {
                 PlayerEntity playerentity = (PlayerEntity) mechaEntity.getControllingPassenger();
                 World worldIn = mechaEntity.world;
                 boolean flag = playerentity.abilities.isCreativeMode;
-                ItemStack itemstack = mechaEntity.getInventory().getStackInSlot(0);
+                ItemStack itemstack = InventoryUtils.findItemStack(mechaEntity.getInventory());
 
-                if (!itemstack.isEmpty() || flag) {
+                if (!itemstack.isEmpty() && itemstack.getItem() instanceof ArrowItem || flag) {
                     if (itemstack.isEmpty()) {
                         itemstack = new ItemStack(Items.ARROW);
                     }

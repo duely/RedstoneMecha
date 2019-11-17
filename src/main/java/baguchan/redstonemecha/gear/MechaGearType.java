@@ -11,7 +11,7 @@ public class MechaGearType implements IGearType {
 
 
     @Override
-    public void onPushSpaceKey(MechaBaseEntity mechaEntity) {
+    public void onPushActionKey(MechaBaseEntity mechaEntity) {
 
     }
 }

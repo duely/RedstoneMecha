@@ -1,16 +1,11 @@
 package baguchan.redstonemecha.entity;
 
-import baguchan.redstonemecha.network.MechaPacketHandler;
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.*;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.Hand;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-
-import javax.annotation.Nullable;
 
 public class RedWorkerEntity extends MechaBaseEntity {
     public RedWorkerEntity(EntityType<? extends RedWorkerEntity> type, World worldIn) {
@@ -23,7 +18,7 @@ public class RedWorkerEntity extends MechaBaseEntity {
     protected void registerAttributes() {
         super.registerAttributes();
         this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(60.0d);
-        this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.285d);
+        this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.295d);
         this.getAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.25D);
         this.getAttributes().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
         this.getAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(6.0D);
@@ -35,79 +30,6 @@ public class RedWorkerEntity extends MechaBaseEntity {
 
     public double getMountedYOffset() {
         return this.getHeight() * 0.5;
-    }
-
-    @Override
-    protected boolean processInteract(PlayerEntity player, Hand hand) {
-        if (super.processInteract(player, hand)) {
-            return true;
-        } else if (player.isSneaking()) {
-            return false;
-        } else if (this.isBeingRidden()) {
-            return true;
-        } else {
-            if (!this.world.isRemote) {
-                this.mountTo(player);
-            }
-            return true;
-        }
-    }
-
-    protected void mountTo(PlayerEntity player) {
-        if (!this.world.isRemote) {
-            player.rotationYaw = this.rotationYaw;
-            player.rotationPitch = this.rotationPitch;
-            player.startRiding(this);
-        }
-    }
-
-    @Override
-    public void updatePassenger(Entity passenger) {
-        super.updatePassenger(passenger);
-
-        if (passenger instanceof MobEntity) {
-            MobEntity mobentity = (MobEntity) passenger;
-            this.renderYawOffset = mobentity.renderYawOffset;
-        }
-    }
-
-    @Nullable
-    public Entity getControllingPassenger() {
-        return this.getPassengers().isEmpty() ? null : this.getPassengers().get(0);
-    }
-
-    @Override
-    public boolean canBePushed() {
-        return !this.isBeingRidden();
-    }
-
-    @Override
-    public boolean canBeSteered() {
-        return this.getControllingPassenger() instanceof PlayerEntity;
-    }
-
-    public boolean isRidingPlayer(PlayerEntity player) {
-        return this.getControllingPassenger() != null && this.getControllingPassenger() instanceof PlayerEntity && this.getControllingPassenger().getUniqueID().equals(player.getUniqueID());
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-
-        if (world.isRemote) {
-            this.updateClientControls();
-        }
-    }
-
-    @OnlyIn(Dist.CLIENT)
-    protected void updateClientControls() {
-        Minecraft mc = Minecraft.getInstance();
-
-        if (this.isRidingPlayer(mc.player)) {
-            if (mc.gameSettings.keyBindJump.isKeyDown()) {
-                MechaPacketHandler.pushSpaceStart(this);
-            }
-        }
     }
 
     @Override
