@@ -1,6 +1,7 @@
 package baguchan.redstonemecha.entity;
 
 import baguchan.redstonemecha.RedstoneMechaCore;
+import baguchan.redstonemecha.client.render.ClientRegistrar;
 import baguchan.redstonemecha.container.MechaContainer;
 import baguchan.redstonemecha.network.MechaPacketHandler;
 import net.minecraft.client.Minecraft;
@@ -171,15 +172,15 @@ public class MechaBaseEntity extends MobEntity{
                 MechaPacketHandler.pushSpaceStart(this);
             }
 
-            if (RedstoneMechaCore.instance.keyBindAction0.isKeyDown()) {
+            if (ClientRegistrar.keyBindAction0.isKeyDown()) {
                 MechaPacketHandler.pushActionStart(this, 0);
             }
 
-            if (RedstoneMechaCore.instance.keyBindAction1.isKeyDown()) {
+            if (ClientRegistrar.keyBindAction1.isKeyDown()) {
                 MechaPacketHandler.pushActionStart(this, 1);
             }
 
-            if (RedstoneMechaCore.instance.keyBindAction2.isKeyDown()) {
+            if (ClientRegistrar.keyBindAction2.isKeyDown()) {
                 MechaPacketHandler.pushActionStart(this, 2);
             }
         }
