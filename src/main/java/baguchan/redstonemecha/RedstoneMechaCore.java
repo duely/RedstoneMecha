@@ -1,12 +1,12 @@
 package baguchan.redstonemecha;
 
+import baguchan.redstonemecha.client.MechaKeyRegistry;
 import baguchan.redstonemecha.client.render.ClientRegistrar;
 import baguchan.redstonemecha.init.GearTypeRegister;
 import baguchan.redstonemecha.init.MechaBlocks;
 import baguchan.redstonemecha.init.MechaItems;
 import baguchan.redstonemecha.network.MechaPacketHandler;
 import net.minecraft.block.Block;
-import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
