@@ -1,17 +1,16 @@
 package baguchan.redstonemecha;
 
+import baguchan.redstonemecha.client.MechaKeyRegistry;
 import baguchan.redstonemecha.client.render.ClientRegistrar;
 import baguchan.redstonemecha.init.GearTypeRegister;
 import baguchan.redstonemecha.init.MechaBlocks;
 import baguchan.redstonemecha.init.MechaItems;
 import baguchan.redstonemecha.network.MechaPacketHandler;
 import net.minecraft.block.Block;
-import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -24,10 +23,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod("redstonemecha")
 public class RedstoneMechaCore
 {
-    public final KeyBinding keyBindAction0 = new KeyBinding("key.redstonemecha.action0", 320, "key.categories.redstonemecha");
-    public final KeyBinding keyBindAction1 = new KeyBinding("key.redstonemecha.action1", 321, "key.categories.redstonemecha");
-    public final KeyBinding keyBindAction2 = new KeyBinding("key.redstonemecha.action2", 322, "key.categories.redstonemecha");
-
     // Directly reference a log4j logger.
     public static final String MODID = "redstonemecha";
     public static RedstoneMechaCore instance;
@@ -56,13 +51,9 @@ public class RedstoneMechaCore
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         ClientRegistrar.render();
-  /*      event.getMinecraftSupplier().get().gameSettings.setKeyBindingCode(keyBindAction0,keyBindAction0.getDefault());
-        event.getMinecraftSupplier().get().gameSettings.setKeyBindingCode(keyBindAction1,keyBindAction1.getDefault());
-        event.getMinecraftSupplier().get().gameSettings.setKeyBindingCode(keyBindAction2,keyBindAction2.getDefault());
-*/
-        ClientRegistry.registerKeyBinding(keyBindAction0);
-        ClientRegistry.registerKeyBinding(keyBindAction1);
-        ClientRegistry.registerKeyBinding(keyBindAction2);
+
+        MechaKeyRegistry.register();
+
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
